@@ -1,0 +1,26 @@
+<template name="home">
+
+<head>
+	<title>Example Static Website</title>
+	<link rel="stylsheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylsheet" type="text/css" href="css/bootstrap-theme.css">
+	<link rel="stylsheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+	<div class="container">
+		
+		<h1>Hello world</h1>
+		{{#each content}}
+			{{#if check "first" name}}
+				{{name}} - {{text}}<br>
+			{{/if}}
+		{{/each}}
+		<br><br>
+
+	</div>
+
+</body>
+
+</template>
