@@ -1,24 +1,27 @@
-<!-- 
-{{#each content}}
-	{{#if check "first" name}}
-		{{name}} - {{text}}<br>
-	{{/if}}
-{{/each}}
--->
-
+<!-- {{returnText "{nameOfSection}"}} -->
 
 <template name="home">
 	
 	<div class="container-fluid section1">
-		<div class="row">
-			<h1>Hello world</h1>
-			{{#each content}}
-				{{#if check "first" name}}
-					{{name}} - {{text}}<br>
-				{{/if}}
-			{{/each}}
-			<br><br>
+		<div class="container">
+			<div class="row text-center" data-anijs="if: click, on: body, do: pulse animated">
+				<h1>{{{returnText "title"}}}</h1>
+				<!-- <h2 class="opacity">{{returnText "underTitle"}}</h2> -->
+			</div>
+			<hr>
+			<div class="row text-center">
+				<h3>{{{returnText "subtitle"}}}</h3>
+			</div>
 		</div>
+	</div>
+
+	<div class="container section2">
+		
+		<div class="row">
+			<h2 class="s2Title">{{{returnText "skillsTitle"}}}</h2>
+			<p>{{{returnText "skillsText"}}}</p>
+		</div>
+
 	</div>
 
 </template>
