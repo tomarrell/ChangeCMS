@@ -1,10 +1,10 @@
-
 /***********************/
 /******* NAV BAR *******/
 /***********************/
 .change-top {
 	position: fixed;
-	border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+	top: 0;
+	/*border-bottom: solid 1px rgba(255, 255, 255, 0.1);*/	
 	margin: auto;
 	width: 100%;
 }
@@ -38,7 +38,7 @@
 .change-navbar li a{
 	float: left;
 	color: white;
-	padding: 20px;
+	padding: 21px;
 	font-family: "MuseoSans";
 }
 .change-navbar li a:hover{
@@ -67,6 +67,9 @@
 .change-float-right {
 	float: right;
 }
+.change-float-left {
+	float: left;
+}
 .change-full-button {
 	width: 100%;
 }
@@ -77,8 +80,58 @@
 /*******************/
 
 .change-top.change-loggedIn {
-	background-color: #666666;
+	background-color: #2B2B2B;
 }
+.change-dashboard {
+	height: calc(100vh - 62px);
+	margin-top: 62px;
+}
+
+/*******************/
+/***** Sidebar *****/
+/*******************/
+
+.change-sidebar {
+	background-color: #67B5E5;
+	width: 200px;
+	height: calc(100vh - 62px);
+	padding-top: 20px;
+}
+.change-sidebar ul {
+	list-style: none;
+	padding-left: 0;
+}
+.change-sidebar ul li {
+	width: 100%;
+}
+.change-sidebar ul a {
+	text-decoration: none;
+	color: #222;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 5px 0 5px 55px;
+	display: block;
+}
+.change-sidebar ul a:hover {
+	background-color: rgba(0,0,0,.2);
+}
+
+/**************************/
+/*** Dashboard Elements ***/
+/**************************/
+
+/* Pages */
+.change-pages {
+	height: calc(100vh - 62px);
+	overflow: hidden;
+}
+.change-pages h2 {
+	color: #222;
+}
+
+
+
+
 
 /********************/
 /****** Footer ******/

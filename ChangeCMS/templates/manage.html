@@ -72,10 +72,10 @@
 						<label for="password">Password</label>
 						<input placeholder="Password" type="password" name="password" class="form-control">
 					</div>
-					<div class="col-md-3 float-right login">
+					<div class="col-md-3 change-float-right change-login">
 						<button type="submit" class="btn btn-default change-float-right change-full-button">Login</button>
 					</div>
-					<div class="col-md-6 float-right">
+					<div class="col-md-6 change-float-right">
 						<button type="submit" class="btn btn-warning change-float-right change-full-button">Forgot Password</button>
 					</div>
 				</form>
@@ -85,10 +85,52 @@
 	{{> ChangeFooter}}
 </template>
 
-<!-- Dashboard Template -->
+<!-- Dashboard Constructor Template -->
 <template name="dashboard">
 	
 	{{> ChangeHead title="Dashboard"}}
 	{{> ChangeNav}}
+	<div class="container-fluid change-dashboard">
+		{{> dashSidebar}}
+		{{> pages}}
+	</div>
+	
+
+</template>
+
+<!-- Dashboard Sidebar Template -->
+<template name="dashSidebar">
+	
+	<aside class="change-sidebar change-float-left">
+		<nav>
+			<ul>
+				<li><a href="#"><i class="fa fa-newspaper-o"></i> Pages</a></li>
+				<li><a href="#"><i class="fa fa-picture-o"></i> Images</a></li>
+<!-- 				<li><a href="#">Comments</a></li>
+				<li><a href="#">Users</a></li>
+				<li><a href="#">Settings</a></li> -->
+			</ul>
+		</nav>
+	</aside>
+
+</template>
+
+<template name="pages">
+	
+	<div class="container change-pages">
+		
+		<div class="row">
+			<h2>Select a page to modify: </h2>
+			<select class="form-control">
+				<option>Thingy</option>
+			</select>
+
+		</div>
+		<div class="row">
+
+		</div>
+
+
+	</div>
 
 </template>
