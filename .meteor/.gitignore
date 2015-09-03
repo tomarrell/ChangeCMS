@@ -1,1 +1,3 @@
+/.meteor/local/*
+!/.meteor/local/db/
 local
