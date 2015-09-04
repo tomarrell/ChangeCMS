@@ -4,7 +4,7 @@
 .change-top {
 	position: fixed;
 	top: 0;
-	/*border-bottom: solid 1px rgba(255, 255, 255, 0.1);*/	
+	border-bottom: solid 1px rgba(255, 255, 255, 0.1);	
 	margin: auto;
 	width: 100%;
 }
@@ -79,19 +79,97 @@
 /**** Dashboard ****/
 /*******************/
 
-.change-top.change-loggedIn {
-	background-color: #2B2B2B;
+.change-popout {
+	position: absolute;
+	height: calc(100vh - 65px);
+	width: 300px;
+	background-color: #374152;
+	left: -300px;
+	transition: left .3s;
 }
-.change-dashboard {
-	height: calc(100vh - 62px);
-	margin-top: 62px;
+.change-DashTop {
+	min-height: 60px;
+	width: 100%;
+	border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+.change-navIcon {
+	display: block;
+	font-size: 24px;
+	width: 30px;
+	padding: 15px 45px 15px 30px;
+	cursor: pointer;
+	border-right: solid 1px rgba(0, 0, 0, 0.1);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.change-out {
+	left: 0;
 }
 
 /*******************/
 /***** Sidebar *****/
 /*******************/
 
-.change-sidebar {
+.change-sidebar ul {
+	list-style: none;
+	padding: 0;
+}
+.change-sidebar ul li {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.change-sidebar ul a {
+	text-transform: uppercase;
+	padding: 10px;
+	display: block;
+	font-family: "Open Sans";
+	font-weight: 500;
+	color: white;
+}
+.change-sidebar li:first-of-type {
+	padding-top: 20px;
+}
+.change-sidebar ul a:hover {
+	background-color: rgba(255,255,255,0.2);
+	text-decoration: none;
+}
+
+
+/********************/
+/****** Footer ******/
+/********************/
+
+.change-footer {
+	position: absolute;
+	bottom: 0;
+	width: 200px;
+	text-align: center;
+	margin: auto;
+	left: 0; right: 0;
+	letter-spacing: 1px;
+	font-family: "MuseoSans";
+}
+
+
+
+
+
+/*.change-top.change-loggedIn {
+	background-color: #2B2B2B;
+}
+.change-dashboard {
+	height: calc(100vh - 62px);
+	margin-top: 62px;
+}
+*/
+/*******************/
+/***** Sidebar *****/
+/*******************/
+
+/*.change-sidebar {
 	background-color: #67B5E5;
 	width: 200px;
 	height: calc(100vh - 62px);
@@ -114,36 +192,17 @@
 }
 .change-sidebar ul a:hover {
 	background-color: rgba(0,0,0,.2);
-}
+}*/
 
 /**************************/
 /*** Dashboard Elements ***/
 /**************************/
 
 /* Pages */
-.change-pages {
+/*.change-pages {
 	height: calc(100vh - 62px);
 	overflow: hidden;
 }
 .change-pages h2 {
 	color: #222;
-}
-
-
-
-
-
-/********************/
-/****** Footer ******/
-/********************/
-
-.change-footer {
-	position: absolute;
-	bottom: 0;
-	width: 200px;
-	text-align: center;
-	margin: auto;
-	left: 0; right: 0;
-	letter-spacing: 1px;
-	font-family: "MuseoSans";
-}
+}*/

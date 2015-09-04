@@ -48,7 +48,6 @@
 <template name="manage">
 	
 	{{> ChangeHead title="login"}}
-	{{> ChangeNav}}
 
 	{{#if currentUser}}
 		{{> dashboard}}
@@ -60,6 +59,7 @@
 
 <!-- Login Template -->
 <template name="login">
+	{{> ChangeNav}}
 	<div class="container-fluid change-section2 change-full">
 		<div class="row">
 			<div class="change-abs-center well well-lg">
@@ -85,52 +85,33 @@
 	{{> ChangeFooter}}
 </template>
 
-<!-- Dashboard Constructor Template -->
 <template name="dashboard">
 	
-	{{> ChangeHead title="Dashboard"}}
-	{{> ChangeNav}}
-	<div class="container-fluid change-dashboard">
-		{{> dashSidebar}}
-		{{> pages}}
-	</div>
-	
+	{{> DashTop}}
+	{{> ChangeSidebar}}
 
 </template>
 
-<!-- Dashboard Sidebar Template -->
-<template name="dashSidebar">
+<template name="ChangeSidebar">
 	
-	<aside class="change-sidebar change-float-left">
-		<nav>
+	<div class="change-popout">
+		<nav class="change-sidebar">
 			<ul>
-				<li><a href="#"><i class="fa fa-newspaper-o"></i> Pages</a></li>
-				<li><a href="#"><i class="fa fa-picture-o"></i> Images</a></li>
-<!-- 				<li><a href="#">Comments</a></li>
-				<li><a href="#">Users</a></li>
-				<li><a href="#">Settings</a></li> -->
+				<li><a href="#" class="change-tab1"><i class="fa fa-file-text-o"></i> &nbsp;Pages</a></li>
+				<li><a href="#" class="change-tab2"><i class="fa fa-th"></i> &nbsp;Items</a></li>
+				<li><a href="#" class="change-tab3"><i class="fa fa-line-chart"></i> &nbsp;Analytics</a></li>
 			</ul>
 		</nav>
-	</aside>
+	</div>
 
 </template>
 
-<template name="pages">
+<template name="DashTop">
 	
-	<div class="container change-pages">
-		
+	<div class="change-DashTop">
 		<div class="row">
-			<h2>Select a page to modify: </h2>
-			<select class="form-control">
-				<option>Thingy</option>
-			</select>
-
+			<div class="change-navIcon"><i class="fa fa-bars"></i></div>
 		</div>
-		<div class="row">
-
-		</div>
-
-
 	</div>
 
 </template>

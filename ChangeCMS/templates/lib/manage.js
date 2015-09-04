@@ -5,8 +5,8 @@
 // Code to run on client. These trigger actions on the server.
 if (Meteor.isClient) {
 
-	// Template.ChangeHead.rendered = function(){
-	// 	$("head").append("<link rel='stylesheet' type='text/css' href='/stylesheets/manage.css'></link>")
+	// Template.dashboard.rendered = function(){
+	// 	console.log($("head"));
 	// };
 
 	Template.login.events({
@@ -29,8 +29,23 @@ if (Meteor.isClient) {
 		"click .change-logout": function() {
 			Meteor.logout(function(err) {
 			});
+		},
+		"click .change-navIcon": function(event) {
+			var icon = $(".change-popout");
+			if (icon.hasClass("change-out")) {
+				icon.removeClass("change-out");
+			} else {
+				icon.addClass("change-out");
+			}
+		},
+		"click .change-tab1": function() {
+			
 		}
 	});
+
+	Template.dashboard.rendered = function() {
+		$("body").css({"overflow-x": "hidden"});
+	}
 
 }
 
