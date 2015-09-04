@@ -136,7 +136,21 @@
 	background-color: rgba(255,255,255,0.2);
 	text-decoration: none;
 }
-
+.change-hr {
+	width: calc(100% + 20px);
+	background-color: #323C4A;
+	height: 5px;
+	border: none;
+	border-bottom: solid 1px rgba(255,255,255,0.1);
+	box-shadow: inset 0 0 3px rgba(0,0,0,.4);
+}
+.change-sidebar-spacer {
+	padding-left: 0 !important;
+}
+.change-label {
+	color: rgba(255,255,255,0.3);
+	margin-left: 8px;
+}
 
 /********************/
 /****** Footer ******/
