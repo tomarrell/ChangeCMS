@@ -31,6 +31,10 @@
 h2, .section2 h3 {
 	color: #222 !important;
 }
+a:hover {
+	cursor: pointer;
+	color: #337ab7;
+}
 
 
 /***********************/
@@ -61,6 +65,7 @@ h2, .section2 h3 {
 	float: right;
 	list-style: none;
 	margin: 0;
+	border: none;
 }
 .navbar li {
 	float: left;
@@ -71,7 +76,7 @@ h2, .section2 h3 {
 .navbar li a{
 	float: left;
 	color: white;
-	padding: 20px;
+	padding: 21px;
 	font-family: "MuseoSans";
 }
 .navbar li a:hover{
@@ -181,11 +186,13 @@ hr {
 	text-align: justify;
 }
 
-/***********************/
-/****** SECTION 4 ******/
-/***********************/
-.section4 {
+/********************/
+/****** FOOTER ******/
+/********************/
+.footer {
 	padding: 20px 0 40px 0;
+	background-color: #2B2B2B;
+	color: white;
 }
 
 

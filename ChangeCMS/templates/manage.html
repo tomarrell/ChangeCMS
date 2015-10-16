@@ -1,0 +1,130 @@
+<!-- {{returnText "{nameOfSection}"}} -->
+
+<!-- Head Template -->
+<template name="ChangeHead">
+
+	<head>
+		<title>ChangeCMS - {{title}}</title>
+		<meta name="description" content="ChangeCMS is responsive content management platform for your site, built on top of NodeJS and Meteor.">
+		<meta name="keywords" content="ChangeCMS, NodeJS, Tom Arrell, web CMS, content management, tomarrell, meteor">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
+	</head>
+
+</template>
+
+<!-- Nav Template -->
+<template name="ChangeNav">
+
+	<div class="container-fluid change-top {{#if currentUser}}change-loggedIn{{/if}}">
+		<div class="row">
+			<nav class="col-md-12 change-header">
+				<div class="change-logo">
+					<a href="/">&lt; Return Home</a>
+				</div>
+				{{#if currentUser}}
+					<ul class="change-navbar">
+						<li><a href="#" class="change-logout">Logout</a></li>
+					</ul>
+				{{/if}}
+			</nav>
+		</div>
+	</div>
+
+</template>
+
+<!-- Footer Template -->
+<template name="ChangeFooter">
+
+	<div class="change-footer">
+		<h2 class="small">&copy; Tom Arrell</h2>
+	</div>
+
+</template>
+
+<!-- CMS Login check -->
+<template name="manage">
+	
+	{{> ChangeHead title="login"}}
+
+	{{#if currentUser}}
+		{{> dashboard}}
+	{{else}}
+		{{> login}}
+	{{/if}}
+
+</template>
+
+<!-- Login Template -->
+<template name="login">
+	{{> ChangeNav}}
+	<div class="container-fluid change-section2 change-full">
+		<div class="row">
+			<div class="change-abs-center well well-lg">
+				<form class="change-loginForm">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input placeholder="Username" type="username" name="username" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input placeholder="Password" type="password" name="password" class="form-control">
+					</div>
+					<div class="col-md-3 change-float-right change-login">
+						<button type="submit" class="btn btn-default change-float-right change-full-button">Login</button>
+					</div>
+					<div class="col-md-6 change-float-right">
+						<button type="submit" class="btn btn-warning change-float-right change-full-button">Forgot Password</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	{{> ChangeFooter}}
+</template>
+
+<template name="dashboard">
+	
+	{{> DashTop}}
+	{{> ChangeSidebar}}
+
+</template>
+
+<template name="ChangeSidebar">
+	
+	<div class="change-popout">
+		<nav class="change-sidebar">
+			<ul>
+				<li><label class="change-label">Main</label></li>
+				<li><a href="#" class="change-tab1"><i class="fa fa-file-text-o"></i> &nbsp;Pages</a></li>
+				<li><a href="#" class="change-tab2"><i class="fa fa-th"></i> &nbsp;Items</a></li>
+				<li><a href="#" class="change-tab3"><i class="fa fa-line-chart"></i> &nbsp;Analytics</a></li>
+				<li class="change-sidebar-spacer"><hr class="change-hr"></li> 									<!-- Horizontal Divider -->
+				<li><label class="change-label">Social</label></li>
+				<li><a href="#" class="change-tab4"><i class="fa fa-facebook"></i> &nbsp;&nbsp;Facebook</a></li>
+				<li><a href="#" class="change-tab5"><i class="fa fa-twitter"></i> &nbsp;Twitter</a></li>
+				<li><a href="#" class="change-tab6"><i class="fa fa-google-plus"></i> &nbsp;Google+</a></li>
+				<li class="change-sidebar-spacer"><hr class="change-hr"></li> 									<!-- Horizontal Divider -->
+				<li><label class="change-label">Admin</label></li>
+				<li><a href="#" class="change-tab7"><i class="fa fa-user"></i> &nbsp;Users</a></li>
+				<li><a href="#" class="change-tab8"><i class="fa fa-cog"></i> &nbsp;Settings</a></li>
+				<li><a href="#" class="change-tab9"><i class="fa fa-support"></i> &nbsp;Support</a></li>
+				<li class="change-sidebar-spacer"><hr class="change-hr"></li> 									<!-- Horizontal Divider -->
+				<li><a href="#" class="change-tab10 change-logout"><i class="fa fa-chevron-circle-left"></i> &nbsp;Logout</a></li>
+			</ul>
+		</nav>
+	</div>
+
+</template>
+
+<template name="DashTop">
+	
+	<div class="change-DashTop">
+		<div class="row">
+			<div class="change-navIcon"><i class="fa fa-bars"></i></div>
+		</div>
+	</div>
+
+</template>
