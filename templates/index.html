@@ -1,7 +1,11 @@
 <!-- {{returnText "{nameOfSection}"}} -->
 
+<!--
+Index.insert({name:"title", text:"Hi, I'm Tom"})
+ -->
+
 <template name="home">
-	
+
 	<div class="container-fluid section1">
 		<div class="container">
 			<div class="row text-center" data-anijs="if: click, on: body, do: pulse animated">
@@ -16,12 +20,174 @@
 	</div>
 
 	<div class="container section2">
-		
+
 		<div class="row">
-			<h2 class="s2Title">{{{returnText "skillsTitle"}}}</h2>
-			<p>{{{returnText "skillsText"}}}</p>
+			<div class="col-md-8 col-md-offset-2">
+				<h2>Skills</h2>
+			</div>
+		</div>
+
+		<!-- Skills Progress Bars START -->
+		<div class="row">
+
+			<div class="col-md-1 col-md-offset-2 progress-label">Java:</div>
+			<div class="col-md-7">
+				<div class="progress">
+				 	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
+				</div>
+			</div>
+
+			<div class="col-md-1 col-md-offset-2  progress-label">Python:</div>
+			<div class="col-md-7">
+				<div class="progress">
+				 	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
+				</div>
+			</div>
+
+			<div class="col-md-1 col-md-offset-2  progress-label">Javascript:</div>
+			<div class="col-md-7">
+				<div class="progress">
+				 	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+				</div>
+			</div>
+
+			<div class="col-md-1 col-md-offset-2  progress-label">NodeJS:</div>
+			<div class="col-md-7">
+				<div class="progress">
+				 	<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+				</div>
+			</div>
+
+			<div class="col-md-1 col-md-offset-2  progress-label">Meteor:</div>
+			<div class="col-md-7">
+				<div class="progress">
+				 	<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+				</div>
+			</div>
+
+			<div class="col-md-1 col-md-offset-2  progress-label">C#:</div>
+			<div class="col-md-7">
+				<div class="progress">
+				 	<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
+				</div>
+			</div>
+
+		</div>
+		<!-- Skills Progress Bars END -->
+
+		<div class="row"><h3 class="text-center">Itching for some work done?</h3></div>
+		<div class="row">
+			<a href="/contact" class="button">
+				<div class="col-sm-4 col-sm-offset-4">
+					GET IN TOUCH
+				</div>
+			</a>
 		</div>
 
 	</div>
+
+	<div class="container-fluid sectionSpacer"></div>
+
+	<div class="container section3">
+
+			<div class="row">
+
+					<!-- Title -->
+					<div class="col-md-12">
+						<h2>Recent Projects</h2>
+					</div>
+
+					<!-- Grid START -->
+					<ul class="project-grid">
+						<li class="col-sm-4 project-item">
+							<div class="project-img">
+								<img src="/images/studiofy.jpeg">
+							</div>
+							<div class="project-desc">
+								<p>Studiofy is an ongoing Auckland based design and development firm. We managed everything from branding to...</p>
+							</div>
+						</li>
+						<li class="col-sm-4 project-item">
+							<div class="project-img">
+								<img src="/images/studiofy.jpeg">
+							</div>
+							<div class="project-desc">
+								<p>Studiofy is an ongoing Auckland based design and development firm. We managed everything from branding to...</p>
+							</div>
+						</li>
+						<li class="col-sm-4 project-item">
+							<div class="project-img">
+								<img src="/images/studiofy.jpeg">
+							</div>
+							<div class="project-desc">
+								<p>Studiofy is an ongoing Auckland based design and development firm. We managed everything from branding to...</p>
+							</div>
+						</li>
+						<li class="col-sm-4 project-item">
+							<div class="project-img">
+								<img src="/images/studiofy.jpeg">
+							</div>
+							<div class="project-desc">
+								<p>Studiofy is an ongoing Auckland based design and development firm. We managed everything from branding to...</p>
+							</div>
+						</li>
+
+					</ul>
+					<!-- Grid END -->
+
+			</div>
+
+	</div>
+
+	<div class="container-fluid sectionSpacer"></div>
+
+	<div class="container section4">
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="s2Title">
+					{{{returnText "aboutTitle"}}}
+				</h2>
+			</div>
+			<div class="col-md-12">
+				<p>{{{returnText "aboutText"}}}</p>
+			</div>
+		</div>
+
+	</div>
+
+	<footer>
+
+		<p>
+			Want to find me elsewhere? Feel free to go have a nosey at my <a>Github</a> for most of my latest
+		</p>
+
+	</footer>
+
+<!-- 	<div class="container section4">
+
+		<div class="row cards">
+			<div class="col-md-12">
+				<h2 class="s2Title">{{{returnText "gridTitle"}}}</h2>
+			</div>
+			<ul>
+				<li class="col-md-4"><img src="/images/portfoly.jpeg"></li>
+				<li class="col-md-4"><img src="/images/studiofy.jpeg"></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="container-fluid footer">
+
+		<div class="container">
+			<div class="col-md-12">
+				<h3>Go check me out over at</h3>
+			</div>
+			<button>Studiofy</button>
+			<button>Portfoly</button>
+		</div>
+
+	</div> -->
 
 </template>

@@ -2,6 +2,35 @@
 .row {
 	padding: 0 10px;
 }
+* {font-family: "MuseoSans";}
+
+.button div {
+	background-color: transparent;
+	border-radius: 0;
+	border: solid 3px #66D3F6 !important;
+	display: block;
+	padding: 20px 35px;
+	text-align: center;
+	transition: background-color .2s;
+	margin-bottom: 40px;
+	margin-top: 20px;
+}
+.button {
+	color: #66D3F6;
+	font-weight: bold;
+	letter-spacing: 2px;
+	transition: color .15s;
+}
+.button:hover div{
+	background-color: #66D3F6;
+}
+.button:hover {
+	text-decoration: none;
+	color: white;
+}
+h2, .section2 h3 {
+	color: #222 !important;
+}
 
 
 /***********************/
@@ -86,11 +115,84 @@ hr {
 
 /***********************/
 /****** SECTION 2 ******/
-/***********************/ 
+/***********************/
 .section2 {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
-.s2Title {
-	color: #222;
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+	.progress-label {
+		text-align: right;
+	}
+}
+
+/***********************/
+/****** SECTION 3 ******/
+/***********************/
+.section3 {
+	padding-top: 20px;
+	padding-bottom: 60px;
+}
+/* Project Styles */
+.project-grid {
+	position: relative;
+	top: 30px;
+	padding: 0;
+	list-style: none;
+}
+.project-item {
+	/*padding: 10px 15px;*/
+	/*padding: 0;*/
+	margin: 0 0 20px 0;
+	position: relative;
+}
+.project-item:after{
+	background-color: rgba(102, 211, 246, 0.4);
+	content: "";
+	position: absolute;
+	left: 0; right: 0; top: 0; bottom: 0;
+	margin: auto;
+	width: 0;
+	height: 0;
+	cursor: pointer;
+	transition: width .3s, height .2s;
+}
+.project-item:hover:after{
+	width: calc(100% - 30px);
+	height: 100%;
+}
+.project-img {
+	min-width: 100%;
+	min-height: 200px;
+	display: block;
+	margin-bottom: 10px;
+	overflow: hidden;
+	position: relative;
+}
+.project-img img {
+	margin: auto;
+	max-width: 100%;
+	position: absolute;
+	left: 0; right: 0; top: 0; bottom: 0;
+}
+.project-desc {
+	text-align: justify;
+}
+
+/***********************/
+/****** SECTION 4 ******/
+/***********************/
+.section4 {
+	padding: 20px 0 40px 0;
+}
+
+
+/****************************/
+/****** SPACER SECTION ******/
+/****************************/
+.sectionSpacer {
+	min-height: 200px;
+	background-color: #8cdbda;
 }
