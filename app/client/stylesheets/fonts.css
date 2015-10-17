@@ -1,0 +1,81 @@
+@font-face{
+	font-family:'MuseoSans';
+	src:url("/fonts/museosans300.ttf");
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face{
+	font-family:'MuseoSans';
+	src:url("/fonts/museosans500.ttf");
+	font-weight: 500;
+	font-style:normal;
+}
+@font-face{
+	font-family:'MuseoSans';
+	src:url("/fonts/museosans700.otf");
+	font-weight: 700;
+	font-style:normal;
+}
+
+/*   Lato   */
+
+@font-face{
+	font-family: 	'Lato';
+	src: 			url("/fonts/Lato-Light.ttf");
+	font-weight: 	300;
+	font-style: 	normal;
+}
+@font-face{
+	font-family: 	'Lato';
+	src: 			url("/fonts/Lato-Lightitalic.ttf");
+	font-weight: 	300;
+	font-style: 	italic;
+}
+@font-face{
+	font-family: 	'Lato';
+	src: 			url("/fonts/Lato-Regular.ttf");
+	font-weight: 	400;
+	font-style: 	normal;
+}
+@font-face{
+	font-family:	'Lato';
+	src:			url("/fonts/Lato-Italic.ttf");
+	font-weight:	normal;
+	font-style:		italic;
+}
+@font-face{
+	font-family:	'Lato';
+	src:			url("/fonts/Lato-Medium.ttf");
+	font-weight:	500;
+	font-style:		normal;
+}
+@font-face{
+	font-family:	'Lato';
+	src:			url("/fonts/Lato-Mediumitalic.ttf");
+	font-weight:	500;
+	font-style:		italic;
+}
+@font-face{
+	font-family:	'Lato';
+	src:			url("/fonts/Lato-Semibold.ttf");
+	font-weight:	600;
+	font-style:		normal;
+}
+@font-face{
+	font-family:	'Lato';
+	src:			url("/fonts/Lato-Mediumitalic.ttf");
+	font-weight:	600;
+	font-style:		italic;
+}
+@font-face{
+	font-family:	'Lato';
+	src:			url("/fonts/Lato-Heavy.ttf");
+	font-weight:	700;
+	font-style:		normal;
+}
+@font-face{
+	font-family:	'Lato';
+	src:			url("/fonts/Lato-Heavyitalic.ttf");
+	font-weight:	700;
+	font-style:		italic;
+}

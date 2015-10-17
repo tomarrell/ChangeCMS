@@ -1,9 +1,9 @@
 /* Global */
+* {font-family: "Lato";}
+
 .row {
 	padding: 0 10px;
 }
-* {font-family: "MuseoSans";}
-
 .button div {
 	background-color: transparent;
 	border-radius: 0;
@@ -58,7 +58,7 @@ a:hover {
 	width: 90px;
 	text-align: center;
 	height: 20px;
-	font-family: "MuseoSans";
+	font-family: "Lato";
 	color: white;
 }
 .navbar {
@@ -77,7 +77,7 @@ a:hover {
 	float: left;
 	color: white;
 	padding: 21px;
-	font-family: "MuseoSans";
+	font-family: "Lato";
 }
 .navbar li a:hover{
 	background-color: rgba(255,255,255,.2);
@@ -93,13 +93,13 @@ a:hover {
 	padding: 190px 0;
 }
 h1 {
-	font-family: "MuseoSans";
+	font-family: "Lato";
 	font-weight: 700;
 	color: white;
 	font-size: 42px;
 }
 h2 {
-	font-family: "MuseoSans";
+	font-family: "Lato";
 	font-weight: 500;
 	color: white;
 	font-size: 28px;
@@ -108,7 +108,7 @@ h2 {
 	opacity: 0.8;
 }
 h3 {
-	font-family: "MuseoSans";
+	font-family: "Lato";
 	font-weight: 300;
 	color: white;
 	font-size: 22px;
@@ -186,11 +186,19 @@ hr {
 	text-align: justify;
 }
 
+/***********************/
+/****** SECTION 4 ******/
+/***********************/
+.section4 {
+	padding-top: 20px;
+	padding-bottom: 60px;
+}
+
 /********************/
 /****** FOOTER ******/
 /********************/
 .footer {
-	padding: 20px 0 40px 0;
+	min-height: 250px;
 	background-color: #2B2B2B;
 	color: white;
 }
