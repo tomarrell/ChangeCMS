@@ -7,6 +7,7 @@ Change is a lightweight NodeJS CMS platform built with Meteor. It is easily inte
 - Mobile UI for use across devices.
 - Store all website data in MongoDB collections, allowing you to extend functionality later on and easily add new dynamic content.
 - Simple includes for existing websites to allow modification. Will require data insertion into database manually however.
+- Currently includes demo site.
 
 ## Current Status
 In development - 05/09/2015
