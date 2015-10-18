@@ -67,6 +67,9 @@
 		<div class="row">
 			<div class="change-abs-center well well-lg">
 				<form class="change-loginForm">
+					<div class="change-loginMessage">
+						Hello
+					</div>
 					<div class="form-group">
 						<label for="username">Username</label>
 						<input placeholder="Username" type="username" name="username" class="form-control">
@@ -92,6 +95,8 @@
 
 	{{> DashTop}}
 	{{> ChangeSidebar}}
+
+	{{> Template.dynamic template=currentTab}}
 
 </template>
 
@@ -128,6 +133,22 @@
 		<div class="row">
 			<div class="change-navIcon"><i class="fa fa-bars"></i></div>
 		</div>
+	</div>
+
+</template>
+
+<!-- DASHBOARD TABS -->
+
+<template name="pages">
+
+	<div class="change-tab-content">
+
+		<select>
+			{{#each getPages}}
+		  		<option value="{{this}}">{{this}}</option>
+			{{/each}}
+		</select>
+
 	</div>
 
 </template>

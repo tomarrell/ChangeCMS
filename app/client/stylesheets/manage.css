@@ -1,4 +1,4 @@
-* {font-family: "MuseoSans";}
+* {font-family: "Lato";}
 
 /***********************/
 /******* NAV BAR *******/
@@ -23,7 +23,7 @@
 	text-align: center;
 	padding: 10px 0;
 	height: 40px !important;
-	font-family: "MuseoSans";
+	font-family: "Lato";
 	color: white;
 }
 .change-navbar {
@@ -41,7 +41,7 @@
 	float: left;
 	color: white;
 	padding: 21px;
-	font-family: "MuseoSans";
+	font-family: "Lato";
 }
 .change-navbar li a:hover{
 	background-color: rgba(255,255,255,.2);
@@ -63,6 +63,20 @@
 	top: 0; bottom: 0; left: 0; right: 0;
 	margin: auto;
 }
+@media (max-width: 720px) {
+	.change-abs-center {
+		width: auto;
+		left: 10px;
+		right: 10px;
+	}
+}
+@media (max-width: 600px) {
+	.change-abs-center {
+		    padding: 20px 0;
+   			height: 280px;
+	}
+}
+
 .change-abs-center form {
 	padding: 30px;
 }
@@ -76,6 +90,15 @@
 	width: 100%;
 }
 .change-login { padding: 0; }
+.change-loginMessage {
+	display: none;
+	color: #FE5F55;
+	background-color: rgba(254, 95, 85, 0.3);
+	border-radius: 4px;
+	padding: 3px 10px;
+	margin-bottom: 10px;
+	margin-top: -20px;
+}
 
 /*******************/
 /**** Dashboard ****/
@@ -107,8 +130,15 @@
 	-o-user-select: none;
 	user-select: none;
 }
+.change-tab-content {
+	transition: margin-left .3s;
+	padding: 20px;
+}
 .change-out {
 	left: 0;
+}
+.content-out {
+	margin-left: 300px;
 }
 
 /*******************/
@@ -166,7 +196,7 @@
 	margin: auto;
 	left: 0; right: 0;
 	letter-spacing: 1px;
-	font-family: "MuseoSans";
+	font-family: "Lato";
 }
 
 

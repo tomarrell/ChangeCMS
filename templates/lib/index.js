@@ -1,11 +1,16 @@
-Index = new Mongo.Collection("index");
+var Index = new Mongo.Collection("index");
+var nameOfPage = "index";
 
 // Server Side
 if (Meteor.isServer) {
 
-	// Meteor.publish("index", function() {
-	// 	return Index.find({});
-	// });
+	var pages = Pages.findOne({ name : "pages" }).data;
+
+	// console.log( activePages.indexOf("index") )
+
+	if (pages.indexOf(nameOfPage) == -1) {
+		Pages.update({name : "pages"}, { $push : { data : nameOfPage }});
+	}
 
 }
 
