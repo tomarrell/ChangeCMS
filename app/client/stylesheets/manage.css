@@ -1,5 +1,10 @@
 * {font-family: "Lato";}
 
+/* Below removes x-overflow of dashboard */
+/*.row {
+	margin: 0;
+}*/
+
 /* Global */
 .button div {
 	background-color: transparent;
@@ -132,6 +137,7 @@
 
 .change-popout {
 	position: absolute;
+	z-index: 2;
 	height: calc(100vh - 65px);
 	width: 300px;
 	background-color: #374152;
@@ -225,56 +231,12 @@
 	font-family: "Lato";
 }
 
-
-
-
-
-/*.change-top.change-loggedIn {
-	background-color: #2B2B2B;
-}
-.change-dashboard {
-	height: calc(100vh - 62px);
-	margin-top: 62px;
-}
-*/
-/*******************/
-/***** Sidebar *****/
-/*******************/
-
-/*.change-sidebar {
-	background-color: #67B5E5;
-	width: 200px;
-	height: calc(100vh - 62px);
-	padding-top: 20px;
-}
-.change-sidebar ul {
-	list-style: none;
-	padding-left: 0;
-}
-.change-sidebar ul li {
-	width: 100%;
-}
-.change-sidebar ul a {
-	text-decoration: none;
-	color: #222;
-	font-size: 18px;
-	font-weight: 500;
-	padding: 5px 0 5px 55px;
-	display: block;
-}
-.change-sidebar ul a:hover {
-	background-color: rgba(0,0,0,.2);
-}*/
-
 /**************************/
 /*** Dashboard Elements ***/
 /**************************/
 
-/* Pages */
-/*.change-pages {
-	height: calc(100vh - 62px);
-	overflow: hidden;
+.change-tab-content {
+	transition: margin-left .3s;
 }
-.change-pages h2 {
-	color: #222;
-}*/
+
+/* Pages */
