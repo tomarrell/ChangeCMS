@@ -140,15 +140,28 @@
 <!-- DASHBOARD TABS -->
 
 <template name="pages">
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="change-pages-selector dropdown">
+				<select class="change-pages-nav form-control">
+					{{#each getPages}}
+						<option value="{{this}}">{{this}}</option>
+					{{/each}}
+				</select>
+			</div>
+		</div>
+	</div>
 
-	<div class="change-tab-content">
-
-		<select>
-			{{#each getPages}}
-		  		<option value="{{this}}">{{this}}</option>
-			{{/each}}
-		</select>
-
+	<div class="change-pages-content">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				{{#each contentBlocks}}
+					<h4>{{capitalizeFirstLetter this.name}}</h4>
+					<textarea class="form-control">{{this.text}}</textarea>
+				{{/each}}
+			</div>
+		</div>
 	</div>
 
 </template>

@@ -1,5 +1,31 @@
 * {font-family: "Lato";}
 
+/* Global */
+.button div {
+	background-color: transparent;
+	border-radius: 0;
+	border: solid 3px #66D3F6 !important;
+	display: block;
+	padding: 20px 35px;
+	text-align: center;
+	transition: background-color .2s;
+	margin-bottom: 40px;
+	margin-top: 20px;
+}
+.button {
+	color: #66D3F6;
+	font-weight: bold;
+	letter-spacing: 2px;
+	transition: color .15s;
+}
+.button:hover div{
+	background-color: #66D3F6;
+}
+.button:hover {
+	text-decoration: none;
+	color: white;
+}
+
 /***********************/
 /******* NAV BAR *******/
 /***********************/
@@ -130,7 +156,7 @@
 	-o-user-select: none;
 	user-select: none;
 }
-.change-tab-content {
+.change-pages-selector {
 	transition: margin-left .3s;
 	padding: 20px;
 }

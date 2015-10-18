@@ -1,16 +1,16 @@
 var Index = new Mongo.Collection("index");
-var nameOfPage = "index";
+Pages["index"] = Index;
 
 // Server Side
 if (Meteor.isServer) {
 
-	var pages = Pages.findOne({ name : "pages" }).data;
+	// var pages = Pages.findOne({ name : "pages" }).data;
 
 	// console.log( activePages.indexOf("index") )
 
-	if (pages.indexOf(nameOfPage) == -1) {
-		Pages.update({name : "pages"}, { $push : { data : nameOfPage }});
-	}
+	// if (pages.indexOf(nameOfPage) == -1) {
+	// 	Pages.update({name : "pages"}, { $push : { data : nameOfPage }});
+	// }
 
 }
 

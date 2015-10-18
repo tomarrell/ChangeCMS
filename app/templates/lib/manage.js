@@ -1,14 +1,14 @@
-Pages = new Mongo.Collection("pages");
+Pages = {};
 
 // Code to run on server. These are functions which will be called from the client as to not expose secure information.
 if (Meteor.isServer) {
 
-	if ( !Pages.findOne({name:"pages"}) ) {
-		Pages.insert({
-			name : "pages",
-			data : []
-		});
-	}
+	// if ( !Pages.findOne({name:"pages"}) ) {
+	// 	Pages.insert({
+	// 		name : "pages",
+	// 		data : []
+	// 	});
+	// }
 
 	Accounts.config({
 		forbidClientAccountCreation: false
@@ -78,11 +78,42 @@ if (Meteor.isClient) {
 		}
 	});
 
-	// Helpers for dashboard tabs
+	//
+	// Helpers and events for dashboard tabs
+	//
 	Template.pages.helpers({
 		getPages: function() {
-			var listOfPages = Pages.findOne({name:"pages"}).data;
-			return ["index", "about"];
+			console.log(Pages);
+			var pageList = [];
+			for (var key in Pages) {
+				key.capitalizeFirstLetter;
+				pageList.push(key);
+			}
+			console.log(pageList)
+			return pageList;
+		},
+		// Stores the session for the current page being edited
+		currentEditPage: function () {
+			return Session.get("currentEditPage");
+		},
+		// Returns all the 
+		contentBlocks: function() {
+			if (!Session.get("currentEditPage")) {
+				Session.setDefault("currentEditPage", "index");
+			}
+			var page = Session.get("currentEditPage");
+			var sections = Pages[page].find();
+			console.log(sections);
+			return sections;
+		},
+		capitalizeFirstLetter: function(word) {
+			return word.charAt(0).toUpperCase() + word.slice(1);
+		}
+	});
+
+	Template.pages.events({
+		"change .change-pages-nav": function(event) {
+			Session.set("currentEditPage", event.target.value);
 		}
 	});
 
@@ -90,4 +121,9 @@ if (Meteor.isClient) {
 		$("body").css({"overflow-x": "hidden"});
 	}
 
+}
+
+// Helper functions and extra implementation
+String.prototype.capitalizeFirstLetter = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
 }
