@@ -10,7 +10,16 @@ Change is a lightweight NodeJS CMS platform built with Meteor. It is easily inte
 - Currently includes demo site.
 
 ## Current Status
-In development - 05/09/2015
+Short term roadmap as of 18/10/15
+- Authentication and login 			[/]
+- Storing site text in database		[\]
+- Draw site text from database		[/]
+- Modify text across each page		[ ]
+- Store images in database			[ ]
+- Modify images across each page	[ ]
+
+Long term roadmap includes analytics and data gathering, social media management and a form of ecommerce management implementation. 
+
 
 
 <p align="center">
@@ -22,6 +31,7 @@ In development - 05/09/2015
 Not currently usable. Working on a stable, function build. Below is a screenshot of the current UI.
 
 ## Installation
+Currently must be downloaded and manually factored into an existing site or a new site built on top of it. This will be streamlined in the future when core functionality reaches a releasable version.
 Through AtmosphereJS upon completion.
 
 ## License
