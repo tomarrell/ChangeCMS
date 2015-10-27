@@ -6,7 +6,7 @@
 }*/
 
 /* Global */
-.button div {
+/*.button div {
 	background-color: transparent;
 	border-radius: 0;
 	border: solid 3px #66D3F6 !important;
@@ -30,6 +30,7 @@
 	text-decoration: none;
 	color: white;
 }
+*/
 
 /***********************/
 /******* NAV BAR *******/
@@ -240,3 +241,10 @@
 }
 
 /* Pages */
+.change-pageText button {
+	float: right;
+	margin: 10px 0;
+}
+.change-input-half {
+	width: 50%;
+}

@@ -1,21 +1,5 @@
 Pages = {};
 
-// Code to run on server. These are functions which will be called from the client as to not expose secure information.
-if (Meteor.isServer) {
-
-	// if ( !Pages.findOne({name:"pages"}) ) {
-	// 	Pages.insert({
-	// 		name : "pages",
-	// 		data : []
-	// 	});
-	// }
-
-	Accounts.config({
-		forbidClientAccountCreation: false
-	});
-
-}
-
 // Code to run on client. These trigger actions on the server.
 if (Meteor.isClient) {
 
@@ -60,8 +44,10 @@ if (Meteor.isClient) {
 		// Logout of CMS
 		"click .change-logout": function() {
 			Meteor.logout(function(err) {
-				console.log("There was an error logging out. Please contact your nearest developer.");
-				console.log(err);
+				if (err) {
+					console.log("There was an error logging out. Please contact your nearest developer.");
+					console.log(err);
+				}
 			});
 		},
 		// Open and close sidebar
@@ -83,37 +69,49 @@ if (Meteor.isClient) {
 	//
 	Template.pages.helpers({
 		getPages: function() {
-			console.log(Pages);
 			var pageList = [];
 			for (var key in Pages) {
 				key.capitalizeFirstLetter;
 				pageList.push(key);
 			}
-			console.log(pageList)
 			return pageList;
 		},
 		// Stores the session for the current page being edited
 		currentEditPage: function () {
 			return Session.get("currentEditPage");
 		},
-		// Returns all the 
+		// Returns all the changeable blocks in page
 		contentBlocks: function() {
 			if (!Session.get("currentEditPage")) {
 				Session.setDefault("currentEditPage", "index");
 			}
 			var page = Session.get("currentEditPage");
 			var sections = Pages[page].find();
-			console.log(sections);
 			return sections;
 		},
 		capitalizeFirstLetter: function(word) {
 			return word.charAt(0).toUpperCase() + word.slice(1);
+		},
+		checkCharLength: function(text) {
+			// console.log(text.length);
+			if (text.length < 150) {
+				return "change-input-half";
+			}
 		}
 	});
 
 	Template.pages.events({
 		"change .change-pages-nav": function(event) {
 			Session.set("currentEditPage", event.target.value);
+		},
+		"click .change-submitText": function(event) {
+			console.log(this);
+			var page = Session.get("currentEditPage");
+
+			var doc = Pages[page].findOne({name: event.name});
+			console.log(event.name);
+			console.log(doc);
+
 		}
 	});
 
