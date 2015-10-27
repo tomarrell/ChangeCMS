@@ -1,0 +1,21 @@
+<!-- Dashboard layout -->
+<template name="dashboard">
+
+	{{> DashTop}}
+	{{> ChangeSidebar}}
+
+	<div class="change-tab-content">
+		{{> Template.dynamic template=currentTab}}
+	</div>
+
+</template>
+
+<template name="DashTop">
+
+	<div class="change-DashTop">
+		<div class="row">
+			<div class="change-navIcon"><i class="fa fa-bars"></i></div>
+		</div>
+	</div>
+
+</template>

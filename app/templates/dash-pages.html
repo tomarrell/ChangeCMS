@@ -1,28 +1,3 @@
-
-<!-- Dashboard layout -->
-<template name="dashboard">
-
-	{{> DashTop}}
-	{{> ChangeSidebar}}
-
-	<div class="change-tab-content">
-		{{> Template.dynamic template=currentTab}}
-	</div>
-
-</template>
-
-<template name="DashTop">
-
-	<div class="change-DashTop">
-		<div class="row">
-			<div class="change-navIcon"><i class="fa fa-bars"></i></div>
-		</div>
-	</div>
-
-</template>
-
-<!-- DASHBOARD TABS -->
-
 <template name="pages">
 	
 	<div class="container">
@@ -43,7 +18,7 @@
 				{{#each contentBlocks}}
 					<div class="col-md-12 change-pageText {{checkCharLength this.text}}">
 						<h4>{{capitalizeFirstLetter this.name}}</h4>
-						<textarea class="form-control">{{this.text}}</textarea>
+						<textarea class="form-control change-{{this.name}}">{{this.text}}</textarea>
 						<button class="btn btn-default change-submitText">Submit</button>
 					</div>
 				{{/each}}

@@ -105,13 +105,11 @@ if (Meteor.isClient) {
 			Session.set("currentEditPage", event.target.value);
 		},
 		"click .change-submitText": function(event) {
-			console.log(this);
 			var page = Session.get("currentEditPage");
-
-			var doc = Pages[page].findOne({name: event.name});
-			console.log(event.name);
-			console.log(doc);
-
+			console.log(event.target)
+			var textArea = $(".change-" + this.name)[0].value;
+			console.log(textArea);
+			Pages[page].update({_id: this._id}, { $set: {text: textArea} });
 		}
 	});
 
