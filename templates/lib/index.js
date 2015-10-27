@@ -19,7 +19,7 @@ if (Meteor.isClient) {
 
 	// Meteor.subscribe("index");
 
-	Template.home.helpers({
+	Template.index.helpers({
 		content: function() {
 			return Index.find({})
 		},

@@ -1,6 +1,6 @@
 Router.map(function() {
 
-	this.route("home", { path: "/" });
+	this.route("index", { path: "/" });
 	this.route("manage");
 
 });
