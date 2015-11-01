@@ -15,8 +15,8 @@ Short term roadmap as of 18/10/15
 - Storing site text in database		[✓]
 - Draw site text from database		[✓]
 - Modify text across each page		[✓]
-- Allow image upload to server    [ ]
-- Store local URL database			  [ ]
+- Modify images across pages      [ ]
+- Allow external image URL's      [ ]
 - Modify images across each page	[ ]
 
 Long term roadmap includes analytics and data gathering, social media management and a form of ecommerce management implementation. 
