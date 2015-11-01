@@ -11,11 +11,12 @@ Change is a lightweight NodeJS CMS platform built with Meteor. It is easily inte
 
 ## Current Status
 Short term roadmap as of 18/10/15
-- Authentication and login 			[✓]
+- Authentication and login 			  [✓]
 - Storing site text in database		[✓]
 - Draw site text from database		[✓]
 - Modify text across each page		[✓]
-- Store images in database			[ ]
+- Allow image upload to server    [ ]
+- Store local URL database			  [ ]
 - Modify images across each page	[ ]
 
 Long term roadmap includes analytics and data gathering, social media management and a form of ecommerce management implementation. 
