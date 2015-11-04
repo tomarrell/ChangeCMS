@@ -3,6 +3,33 @@ Pages = {};
 // Code to run on client. These trigger actions on the server.
 if (Meteor.isClient) {
 
+	////////////////////
+	// Global Helpers //
+	////////////////////
+
+	// Add page to CMS directory
+	Template.registerHelper("newPage", function(pageName) {
+		// Creates new mongo collection for the page and adds the page to the global page document
+		//Pages[pageName] = new Mongo.Collection(pageName);
+	});
+
+	/* 
+	 *	Add/get information in page
+	 *	Parameters: 
+	 *		pageName	: the predefined name of the current page
+	 *		contentType	: the type of the content to be served; this defines the type of manipulation possible in the admin panel
+	 * 		contentName : the name of the content to be served in that location on the page
+	 *	
+	 */ 
+	Template.registerHelper("superAdd", function(pageName, contentType, contentName) {
+
+		var pageData = Pages[pageName];
+		console.log(pageData);
+
+	});
+
+
+
 	// Template.dashboard.rendered = function(){
 	// 	console.log($("head"));
 	// };
