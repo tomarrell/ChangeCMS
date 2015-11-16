@@ -2,6 +2,8 @@
 
 Change is a lightweight NodeJS CMS platform built with Meteor. It is easily integrated into existing Meteor applications and websites. Change provides a simple solution for those developers who work with Node to provide their clients with an easy interface for them to make changes.
 
+The goal is to support a wide range of web admin features including ecommerce, blogging and analytics and social media management. All from the one panel! 
+
 ## Features
 - Modifications trigger live updates across all currently connected browsers. No need for a refresh for everyone connected to see the new updates!
 - Mobile UI for use across devices.
