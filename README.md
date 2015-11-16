@@ -35,5 +35,8 @@ Not currently usable. Working on a stable, function build. Below is a screenshot
 Currently must be downloaded and manually factored into an existing site or a new site built on top of it. This will be streamlined in the future when core functionality reaches a releasable version.
 Through AtmosphereJS upon completion.
 
+## Contribution
+Feel free to make a fork of the repo and submit a pull request with necessary changes.
+
 ## License
 All source included in this directory and all subdirectories are licensed under GNU General Public License. See License file in root for full details.
