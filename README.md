@@ -21,7 +21,7 @@ Short term roadmap as of 18/10/15
 - Allow external image URL's      [ ]
 - Modify images across each page	[ ]
 
-Long term roadmap includes analytics and data gathering, social media management and a form of ecommerce management implementation. I also aim to add in dynamic content hooks so you can make blog-esque posts and gather info from the API. 
+Long term roadmap includes analytics/data gathering, social media management and a form of ecommerce management implementation. I also aim to add in dynamic content hooks so you can make blog-esque posts and gather info from the API. 
 
 
 
