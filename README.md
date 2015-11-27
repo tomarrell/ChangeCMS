@@ -34,7 +34,7 @@ Long term roadmap includes analytics/data gathering, social media management and
 Not currently usable. Working on a stable, function build. Below is a screenshot of the current UI.
 
 ## Installation
-Currently must be downloaded and manually factored into an existing site or a new site built on top of it. This will be streamlined in the future when core functionality reaches a releasable version.
+Currently must be downloaded and manually factored into an existing site or a new site built on top of it. Allows for easy hooks to be placed instead-of or around existing content. This will be streamlined in the future when core functionality reaches a releasable version.
 Through AtmosphereJS upon completion.
 
 ## Contribution
