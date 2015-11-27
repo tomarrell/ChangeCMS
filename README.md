@@ -34,8 +34,7 @@ Long term roadmap includes analytics/data gathering, social media management and
 Not currently usable. Working on a stable, function build. Below is a screenshot of the current UI.
 
 ## Installation
-Currently must be downloaded and manually factored into an existing site or a new site built on top of it. Allows for easy hooks to be placed instead-of or around existing content. New content can be labelled and filled using the CMS as well. This will be streamlined in the future when core functionality reaches a releasable version.
-Through AtmosphereJS upon completion.
+Currently must be downloaded and manually factored into an existing site or a new site built on top of it. Allows for easy hooks to be placed instead-of or around existing content. New content can be labelled and filled using the CMS as well. This will be streamlined in the future when core functionality reaches a releasable version. A package is planned to be made available on AtmosphereJS upon completion.
 
 ## Contribution
 Feel free to make a fork of the repo and submit a pull request with necessary changes.
