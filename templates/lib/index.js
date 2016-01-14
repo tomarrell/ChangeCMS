@@ -1,6 +1,3 @@
-var Index = new Mongo.Collection("index");
-Pages["index"] = Index;
-
 // Server Side
 if (Meteor.isServer) {
 

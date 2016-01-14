@@ -1,5 +1,12 @@
+Data = new Mongo.Collection("data");
+
 // Code to run on server. These are functions which will be called from the client as to not expose secure information.
+
 if (Meteor.isServer) {
+
+	Meteor.publish("data", function() {
+		return Data.rawCollection().find();
+	});
 
 	// if ( !Pages.findOne({name:"pages"}) ) {
 	// 	Pages.insert({
@@ -10,6 +17,16 @@ if (Meteor.isServer) {
 
 	Accounts.config({
 		forbidClientAccountCreation: false
+	});
+
+	Meteor.methods({
+		"pull": function() {
+			return Data.find().fetch();
+		},
+		"insert": function(data) {
+			Data.insert(data);
+			return data;
+		}
 	});
 
 }
