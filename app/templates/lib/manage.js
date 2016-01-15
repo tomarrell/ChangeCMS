@@ -150,9 +150,9 @@ if (Meteor.isClient) {
                 }).items;
                 itemArray = $.map(sections, function(value, index) {
                     var payload = {}
-                    payload["name"]           = index;
-                    payload["contentType"]    = value[0];
-                    payload["content"]        = value[1];
+                    payload["name"] = index;
+                    payload["contentType"] = value[0];
+                    payload["content"] = value[1];
                     return payload;
                 });
 

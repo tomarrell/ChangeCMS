@@ -10,3 +10,4 @@ iron:router
 accounts-password
 accounts-ui
 fortawesome:fontawesome
+jquery
