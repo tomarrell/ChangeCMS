@@ -1,5 +1,5 @@
 <template name="pages">
-	
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -16,9 +16,9 @@
 		<div class="change-pages-content">
 			<div class="row">
 				{{#each contentBlocks}}
-					<div class="col-md-12 change-pageText {{checkCharLength this.text}}">
+					<div class="col-md-12 change-pageText {{checkCharLength this.content}}">
 						<h4>{{capitalizeFirstLetter this.name}}</h4>
-						<textarea class="form-control change-{{this.name}}">{{this.text}}</textarea>
+						<textarea class="form-control change-{{this.name}}">{{this.content}}</textarea>
 						<button class="btn btn-default change-submitText">Submit</button>
 					</div>
 				{{/each}}

@@ -5,6 +5,10 @@ if (Meteor.isClient) {
     // Global Helpers //
     ////////////////////
 
+    function dataReady() {
+        return Meteor.subscribe("data").ready();
+    }
+
     // Add page to CMS directory
     Template.registerHelper("newPage", function(pageName) {
         // Creates new mongo collection for the page and adds the page to the global page document
@@ -21,11 +25,13 @@ if (Meteor.isClient) {
      */
     Template.registerHelper("superAdd", function(pageName, contentName, contentType, content) {
 
-        if( Meteor.subscribe("data").ready() ) {
+        if (dataReady()) {
             // console.log(Data.find().fetch());
             // var pageData
             // return Data.find().fetch()[0].items["title"];
-            var pageDoc = Data.findOne({"name": pageName});
+            var pageDoc = Data.findOne({
+                "name": pageName
+            });
 
             if (pageDoc) {
                 if (contentType && content) {
@@ -34,7 +40,9 @@ if (Meteor.isClient) {
                     } else {
                         var newContent = [contentType, content];
                         pageDoc.items[contentName] = newContent;
-                        Data.update({_id: pageDoc._id}, pageDoc);
+                        Data.update({
+                            _id: pageDoc._id
+                        }, pageDoc);
                         Session.set(contentName, content);
                     }
                 } else {
@@ -50,35 +58,6 @@ if (Meteor.isClient) {
                 Session.set(contentName, content);
             }
         }
-
-        // Meteor.subscribe("data", function() {
-
-        //     var pageDoc = Data.findOne({"name": pageName});
-
-        //     if (pageDoc) {
-        //         if (contentType && content) {
-        //             if (pageDoc.items[contentName]) {
-        //                 Session.set(contentName, pageDoc.items[contentName][1])
-        //             } else {
-        //                 var newContent = [contentType, content];
-        //                 pageDoc.items[contentName] = newContent;
-        //                 Data.update({_id: pageDoc._id}, pageDoc);
-        //                 Session.set(contentName, content);
-        //             }
-        //         } else {
-        //             Session.set(contentName, pageDoc.items[contentName][1]);
-        //         }
-        //     } else {
-        //         var payload = {
-        //             "name": pageName,
-        //             "items": {}
-        //         }
-        //         console.log("Inserting to Database")
-        //         Data.insert(payload);
-        //         Session.set(contentName, content);
-        //     }
-
-        // });
 
         return Session.get(contentName);
 
@@ -145,27 +124,48 @@ if (Meteor.isClient) {
     // Helpers and events for dashboard tabs
     //
     Template.pages.helpers({
-        // getPages: function() {
-        //     var pageList = [];
-        //     for (var key in Pages) {
-        //         key.capitalizeFirstLetter;
-        //         pageList.push(key);
-        //     }
-        //     return pageList;
-        // },
+        getPages: function() {
+            if (dataReady()) {
+                var pageList = [];
+                var pageData = Data.find().fetch();
+                for (var i = 0; i < pageData.length; i++) {
+                    pageList.push(pageData[i].name);
+                }
+                return pageList;
+            }
+        },
         // Stores the session for the current page being edited
         currentEditPage: function() {
             return Session.get("currentEditPage");
         },
         // Returns all the changeable blocks in page
-        // contentBlocks: function() {
-        //     if (!Session.get("currentEditPage")) {
-        //         Session.setDefault("currentEditPage", "index");
-        //     }
-        //     var page = Session.get("currentEditPage");
-        //     var sections = Pages[page].find();
-        //     return sections;
-        // },
+        contentBlocks: function() {
+            if (dataReady()) {
+                if (!Session.get("currentEditPage")) {
+                    Session.setDefault("currentEditPage", "index");
+                }
+                var page = Session.get("currentEditPage");
+                var sections = Data.findOne({
+                    "name": page
+                }).items;
+                itemArray = $.map(sections, function(value, index) {
+                    var payload = {}
+                    payload["name"]           = index;
+                    payload["contentType"]    = value[0];
+                    payload["content"]        = value[1];
+                    return payload;
+                });
+
+                var returnArray = [];
+
+                // Reverse list to show inputs same as page order
+                while (itemArray.length) {
+                    returnArray.push(itemArray.pop());
+                }
+
+                return returnArray;
+            }
+        },
         capitalizeFirstLetter: function(word) {
             return word.charAt(0).toUpperCase() + word.slice(1);
         },
