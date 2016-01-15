@@ -1,6 +1,14 @@
 // Code to run on client. These trigger actions on the server.
 if (Meteor.isClient) {
 
+    // Data = new Mongo.Collection("data");
+
+    // Meteor.subscribe("data");
+
+    // Data.observe(function() {
+    //     console.log("changes occurred");
+    // });
+
     ////////////////////
     // Global Helpers //
     ////////////////////
@@ -12,16 +20,49 @@ if (Meteor.isClient) {
     });
 
     /*
-     *	Add/get information in page
-     *	Parameters:
-     *		pageName	: the predefined name of the current page
-     *		contentType	: the type of the content to be served; this defines the type of manipulation possible in the admin panel
-     * 		contentName : the name of the content to be served in that location on the page
+     *  Add/get information in page
+     *  Parameters:
+     *      pageName    : the predefined name of the current page
+     *      contentType : the type of the content to be served; this defines the type of manipulation possible in the admin panel
+     *      contentName : the name of the content to be served in that location on the page
      *
      */
     Template.registerHelper("superAdd", function(pageName, contentName, contentType, content) {
 
-        Meteor.subscribe("data", )
+        Meteor.subscribe("data", function() {
+
+            var pageDoc = Data.findOne({"name": pageName});
+
+            if (pageDoc) {
+                if (contentType && content) {
+                    if (pageDoc.items[contentName]) {
+                        Session.set(contentName, pageDoc.items[contentName][1])
+                        return;
+                    } else {
+                        var newContent = [contentType, content];
+                        pageDoc.items[contentName] = newContent;
+                        Data.update({_id: pageDoc._id}, pageDoc);
+                        Session.set(contentName, content);
+                        return;
+                    }
+                } else {
+                    Session.set(contentName, pageDoc.items[contentName][1]);
+                    return;
+                }
+            } else {
+                var payload = {
+                    "name": pageName,
+                    "items": {}
+                }
+                console.log("Inserting to Database")
+                Data.insert(payload);
+                Session.set(contentName, content);
+                return;
+            }
+
+        });
+
+        return Session.get(contentName);
 
     });
 
@@ -46,13 +87,13 @@ if (Meteor.isClient) {
     //             });
 
     //         } else {
-    //         	result.forEach(function(el) {
-    //         		if (el.name == pageName) {
-    //         			console.log(el)
-    //         			Session.set("data", el.items[contentName][1])
-    //         			return;
-    //         		}
-    //         	});
+    //          result.forEach(function(el) {
+    //              if (el.name == pageName) {
+    //                  console.log(el)
+    //                  Session.set("data", el.items[contentName][1])
+    //                  return;
+    //              }
+    //          });
     //         }
 
     //     });
@@ -122,27 +163,27 @@ if (Meteor.isClient) {
     // Helpers and events for dashboard tabs
     //
     Template.pages.helpers({
-        getPages: function() {
-            var pageList = [];
-            for (var key in Pages) {
-                key.capitalizeFirstLetter;
-                pageList.push(key);
-            }
-            return pageList;
-        },
+        // getPages: function() {
+        //     var pageList = [];
+        //     for (var key in Pages) {
+        //         key.capitalizeFirstLetter;
+        //         pageList.push(key);
+        //     }
+        //     return pageList;
+        // },
         // Stores the session for the current page being edited
         currentEditPage: function() {
             return Session.get("currentEditPage");
         },
         // Returns all the changeable blocks in page
-        contentBlocks: function() {
-            if (!Session.get("currentEditPage")) {
-                Session.setDefault("currentEditPage", "index");
-            }
-            var page = Session.get("currentEditPage");
-            var sections = Pages[page].find();
-            return sections;
-        },
+        // contentBlocks: function() {
+        //     if (!Session.get("currentEditPage")) {
+        //         Session.setDefault("currentEditPage", "index");
+        //     }
+        //     var page = Session.get("currentEditPage");
+        //     var sections = Pages[page].find();
+        //     return sections;
+        // },
         capitalizeFirstLetter: function(word) {
             return word.charAt(0).toUpperCase() + word.slice(1);
         },

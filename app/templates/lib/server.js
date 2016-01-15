@@ -5,7 +5,8 @@ Data = new Mongo.Collection("data");
 if (Meteor.isServer) {
 
 	Meteor.publish("data", function() {
-		return Data.rawCollection().find();
+		handle = Data.find();
+		return handle;
 	});
 
 	// if ( !Pages.findOne({name:"pages"}) ) {
