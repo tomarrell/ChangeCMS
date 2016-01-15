@@ -153,7 +153,7 @@ hr {
 	margin: 0 0 20px 0;
 	position: relative;
 }
-.project-item:after{
+.project-item::after{
 	background-color: rgba(102, 211, 246, 0.4);
 	content: "";
 	position: absolute;
@@ -164,7 +164,7 @@ hr {
 	cursor: pointer;
 	transition: width .3s, height .2s;
 }
-.project-item:hover:after{
+.project-item:hover::after{
 	width: calc(100% - 30px);
 	height: 100%;
 }

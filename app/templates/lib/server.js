@@ -24,9 +24,17 @@ if (Meteor.isServer) {
 		"pull": function() {
 			return Data.find().fetch();
 		},
-		"insert": function(data) {
-			Data.insert(data);
-			return data;
+		"updateData": function(page, contentName, content) {
+			console.log(page, contentName, content);
+			var items = Data.findOne({"name": page}).items;
+			items[contentName][1] = content;
+			Data.update({
+                "name": page
+            }, {
+                $set: {
+                    "items": items
+                }
+            });
 		}
 	});
 

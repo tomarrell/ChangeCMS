@@ -187,16 +187,16 @@ if (Meteor.isClient) {
         },
         "click .change-submitText": function(event) {
             var page = Session.get("currentEditPage");
-            console.log(event.target)
             var textArea = $(".change-" + this.name)[0].value;
-            console.log(textArea);
-            Pages[page].update({
-                _id: this._id
-            }, {
-                $set: {
-                    text: textArea
-                }
-            });
+            console.log(event);
+            Meteor.call("updateData", page, this.name, textArea);
+            // Data.update({
+            //     "name": page
+            // }, {
+            //     $set: {
+            //         text: textArea
+            //     }
+            // });
         }
     });
 
