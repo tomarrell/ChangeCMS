@@ -16,23 +16,23 @@ if (Meteor.isClient) {
 
 	// Meteor.subscribe("index");
 
-	Template.index.helpers({
-		content: function() {
-			return Index.find({})
-		},
-		check: function(section, toCheck) {
-			return section === toCheck;
-		},
-		returnText: function(nameOfSection) {
-			var content = Index.find({});
-			var text = "";
-			content.forEach(function(entry) {
-				if (entry.name == nameOfSection) {
-					text = entry.text
-				}
-			});
-			return text;
-		}
-	});
+	// Template.index.helpers({
+	// 	content: function() {
+	// 		return Index.find({})
+	// 	},
+	// 	check: function(section, toCheck) {
+	// 		return section === toCheck;
+	// 	},
+	// 	returnText: function(nameOfSection) {
+	// 		var content = Index.find({});
+	// 		var text = "";
+	// 		content.forEach(function(entry) {
+	// 			if (entry.name == nameOfSection) {
+	// 				text = entry.text
+	// 			}
+	// 		});
+	// 		return text;
+	// 	}
+	// });
 
 }

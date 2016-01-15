@@ -1,14 +1,6 @@
 // Code to run on client. These trigger actions on the server.
 if (Meteor.isClient) {
 
-    // Data = new Mongo.Collection("data");
-
-    // Meteor.subscribe("data");
-
-    // Data.observe(function() {
-    //     console.log("changes occurred");
-    // });
-
     ////////////////////
     // Global Helpers //
     ////////////////////
@@ -29,78 +21,68 @@ if (Meteor.isClient) {
      */
     Template.registerHelper("superAdd", function(pageName, contentName, contentType, content) {
 
-        Meteor.subscribe("data", function() {
-
+        if( Meteor.subscribe("data").ready() ) {
+            // console.log(Data.find().fetch());
+            // var pageData
+            // return Data.find().fetch()[0].items["title"];
             var pageDoc = Data.findOne({"name": pageName});
 
             if (pageDoc) {
                 if (contentType && content) {
                     if (pageDoc.items[contentName]) {
                         Session.set(contentName, pageDoc.items[contentName][1])
-                        return;
                     } else {
                         var newContent = [contentType, content];
                         pageDoc.items[contentName] = newContent;
                         Data.update({_id: pageDoc._id}, pageDoc);
                         Session.set(contentName, content);
-                        return;
                     }
                 } else {
                     Session.set(contentName, pageDoc.items[contentName][1]);
-                    return;
                 }
             } else {
                 var payload = {
                     "name": pageName,
                     "items": {}
                 }
-                console.log("Inserting to Database")
+                console.log("Inserting to database")
                 Data.insert(payload);
                 Session.set(contentName, content);
-                return;
             }
+        }
 
-        });
+        // Meteor.subscribe("data", function() {
+
+        //     var pageDoc = Data.findOne({"name": pageName});
+
+        //     if (pageDoc) {
+        //         if (contentType && content) {
+        //             if (pageDoc.items[contentName]) {
+        //                 Session.set(contentName, pageDoc.items[contentName][1])
+        //             } else {
+        //                 var newContent = [contentType, content];
+        //                 pageDoc.items[contentName] = newContent;
+        //                 Data.update({_id: pageDoc._id}, pageDoc);
+        //                 Session.set(contentName, content);
+        //             }
+        //         } else {
+        //             Session.set(contentName, pageDoc.items[contentName][1]);
+        //         }
+        //     } else {
+        //         var payload = {
+        //             "name": pageName,
+        //             "items": {}
+        //         }
+        //         console.log("Inserting to Database")
+        //         Data.insert(payload);
+        //         Session.set(contentName, content);
+        //     }
+
+        // });
 
         return Session.get(contentName);
 
     });
-
-    // Template.registerHelper("superAdd", function(pageName, contentName, contentType, content) {
-
-    //     console.log("executing function");
-    //     Meteor.call("pull", function(err, result) {
-    //         console.log(result);
-
-    //         if (!result.length > 0) {
-
-    //             var data = {
-    //                 "name": pageName,
-    //                 "items": {}
-    //             }
-
-    //             data.items[contentName] = [contentType, content];
-
-    //             Meteor.call("insert", data, function(err, result) {
-    //                 console.log("done");
-    //                 Session.set("data", result.items[contentName][1]);
-    //             });
-
-    //         } else {
-    //          result.forEach(function(el) {
-    //              if (el.name == pageName) {
-    //                  console.log(el)
-    //                  Session.set("data", el.items[contentName][1])
-    //                  return;
-    //              }
-    //          });
-    //         }
-
-    //     });
-
-    //     return Session.get("data");
-
-    // });
 
     // LOGIN HELPERS
     Template.login.helpers({
@@ -193,6 +175,10 @@ if (Meteor.isClient) {
                 return "change-input-half";
             }
         }
+    });
+
+    Template.index.helpers({
+
     });
 
     Template.pages.events({
