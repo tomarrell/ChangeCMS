@@ -169,6 +169,9 @@ if (Meteor.isClient) {
         capitalizeFirstLetter: function(word) {
             return word.charAt(0).toUpperCase() + word.slice(1);
         },
+        replaceSpaces: function(text) {
+            return text.split(" ").join("-");
+        },
         checkCharLength: function(text) {
             // console.log(text.length);
             if (text.length < 150) {
@@ -187,7 +190,7 @@ if (Meteor.isClient) {
         },
         "click .change-submitText": function(event) {
             var page = Session.get("currentEditPage");
-            var textArea = $(".change-" + this.name)[0].value;
+            var textArea = $(".change-" + this.name.split(" ").join("-"))[0].value;
             console.log(event);
             Meteor.call("updateData", page, this.name, textArea);
             // Data.update({
